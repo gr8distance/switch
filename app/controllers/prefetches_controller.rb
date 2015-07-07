@@ -4,7 +4,33 @@ class PrefetchesController < ApplicationController
   # GET /prefetches
   # GET /prefetches.json
   def index
-    @prefetches = Prefetch.all
+		from = Time.now.at_beginning_of_day
+		to   = from + 1.day
+
+    @prefetches = Prefetch.where(created_at: from...to)
+		@new_pre = 0
+		@che_pre = 0
+		@inf_pre = 0
+		
+		@prefetches.each do |pre|
+			case pre.types
+			when "新規受付"
+				@new_pre+=1
+			when "機種変更"
+				@che_pre+=1
+			when "情報変更"
+				@inf_pre+=1
+			end
+		end
+		
+		@un_charged = 0
+		@charged = 0
+		@charge_all = 0
+		Card.where(created_at: from...to).each do |card|
+			(card.charged)? @charged+=1 : @un_charged += 1
+			@charged+=1
+		end
+		
   end
 
   # GET /prefetches/1

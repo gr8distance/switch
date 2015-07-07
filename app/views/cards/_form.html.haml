@@ -1,0 +1,14 @@
+= form_for @card do |f|
+  - if @card.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@card.errors.count, "error")} prohibited this card from being saved:"
+      %ul
+        - @card.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    %p
+      = f.check_box :charged
+      = f.label :charged,"チャージつけたらチェック！"
+  .actions
+    %button.btn-flat.white-text.cyan.waves-effect.waves-light 発行したよ(・∀・)！

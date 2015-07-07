@@ -3,8 +3,7 @@
     %h5 スマホ先取りプログラム
     %p
       先取りプログラムを申し込んだらここで入力するやで(*´∀｀*)
-    = link_to prefetches_path do
-      %button.btn-flat.pink.white-text.waves-effect.waves-light 今日の受付結果を見る(；・∀・)
+    = link_to "今日の先取りプログラムの登録結果を見る",prefetches_path,class: "cyan-text"
 
   .container
     .col.s12.m4.grey.lighten-5

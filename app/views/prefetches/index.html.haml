@@ -1,21 +1,38 @@
-%h1 Listing prefetches
+.container
 
-%table
-  %thead
-    %tr
-      %th Types
-      %th
-      %th
-      %th
-
-  %tbody
-    - @prefetches.each do |prefetch|
+  .card-panel
+    %h5.cyan-text
+      = Time.now.strftime("%m/%d")
+      %span.font_size_18 の先取りプログラムの受付状況
+    %table.bordered
       %tr
-        %td= prefetch.types
-        %td= link_to 'Show', prefetch
-        %td= link_to 'Edit', edit_prefetch_path(prefetch)
-        %td= link_to 'Destroy', prefetch, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td 新規受付
+        %td 機種変更
+        %td 情報変更
+      
+      %tr
+        %td= "#{@new_pre}件"
+        %td= "#{@che_pre}件"
+        %td= "#{@inf_pre}件"
+          
+    
+  .card-panel
+    %h5.orange-text SBカードの発行状況について
+    %table.bordered
+      %tr
+        %td チャージ無し
+        %td チャージあり
+        %td 合計
 
-%br
+      %tr
+        %td= "#{@un_charged}件"
+        %td= "#{@charged}件"
+        %td= "#{@charge_all}件"
 
-= link_to 'New Prefetch', new_prefetch_path
+= link_to :root do
+  %button.btn.waves-effect.waves-light.cyan 登録画面に戻るやで(・∀・)！
+
+:css
+  .font_size_18{
+    font-size: 18px;
+  }

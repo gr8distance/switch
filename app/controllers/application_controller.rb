@@ -6,6 +6,7 @@ class ApplicationController < ActionController::Base
 
 	def set_instance
 		@prefetche = Prefetch.new
+		@card = Card.new
 	end
 
 end

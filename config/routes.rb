@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :cards
   resources :prefetches
   root 'home#index'
 
