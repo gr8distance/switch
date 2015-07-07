@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Types:
+  = @prefetch.types
+
+= link_to 'Edit', edit_prefetch_path(@prefetch)
+\|
+= link_to 'Back', prefetches_path

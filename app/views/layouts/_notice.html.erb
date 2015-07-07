@@ -1,0 +1,12 @@
+<% if notice %>
+	<script>
+		$(function(){Materialize.toast('<%= notice %>', 4000);});
+	</script>
+<% end %>
+
+<% if alert %>
+	<script>
+		$(function(){Materialize.toast('<%= alert %>', 4000);});
+	</script>
+<% end %>
+

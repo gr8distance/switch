@@ -1,0 +1,5 @@
+= form_for(@prefetche) do |f|
+  .input-field
+    = f.text_field :types,value: "#{type}",type: "hidden"
+  .input-field
+    %button(class="btn-flat waves-effect waves-light white-text #{color}")= "先取り(*´∀｀*)"

@@ -1,0 +1,2 @@
+module PrefetchesHelper
+end

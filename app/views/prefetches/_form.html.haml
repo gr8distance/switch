@@ -1,0 +1,13 @@
+= form_for @prefetch do |f|
+  - if @prefetch.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@prefetch.errors.count, "error")} prohibited this prefetch from being saved:"
+      %ul
+        - @prefetch.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :types
+    = f.text_field :types
+  .actions
+    = f.submit 'Save'

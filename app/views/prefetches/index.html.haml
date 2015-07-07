@@ -1,0 +1,21 @@
+%h1 Listing prefetches
+
+%table
+  %thead
+    %tr
+      %th Types
+      %th
+      %th
+      %th
+
+  %tbody
+    - @prefetches.each do |prefetch|
+      %tr
+        %td= prefetch.types
+        %td= link_to 'Show', prefetch
+        %td= link_to 'Edit', edit_prefetch_path(prefetch)
+        %td= link_to 'Destroy', prefetch, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Prefetch', new_prefetch_path
