@@ -28,9 +28,22 @@ class PrefetchesController < ApplicationController
 		@charge_all = 0
 		Card.where(created_at: from...to).each do |card|
 			(card.charged)? @charged+=1 : @un_charged += 1
-			@charged+=1
+			@charge_all +=1
 		end
-		
+
+		@myshop_n = 0
+		@myshop_c = 0
+		@myshop_i = 0
+		Shop.where(created_at: from...to).each do |shop|
+			case shop.types
+			when "新規受付"
+				@myshop_n+=1
+			when "機種変更"
+				@myshop_c+=1
+			when "情報変更"
+				@myshop_i+=1
+			end
+		end
   end
 
   # GET /prefetches/1

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150707114243) do
+ActiveRecord::Schema.define(version: 20150708141955) do
 
   create_table "cards", force: :cascade do |t|
     t.boolean  "charged"
@@ -20,6 +20,12 @@ ActiveRecord::Schema.define(version: 20150707114243) do
   end
 
   create_table "prefetches", force: :cascade do |t|
+    t.string   "types"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "shops", force: :cascade do |t|
     t.string   "types"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,32 +1,48 @@
 .row
   .center
-    %h5 スマホ先取りプログラム
-    %p
-      先取りプログラムを申し込んだらここで入力するやで(*´∀｀*)
     = link_to prefetches_path do
       %button.btn-flat.pink.white-text.waves-effect.waves-light 今日の受付結果を見る(；・∀・)
 
-  .container
-    .col.s12.m4.grey.lighten-5
+  .containers.grey.lighten-4
+    %h5 スマホ先取りプログラム
+    %p 先取りプログラムを申し込んだらここで入力するやで(*´∀｀*)
+    .col.s12.m6.grey.lighten-5
       .center
         .card-panel
           %h5 新規での
           = render "prefetches/pre",type: "新規受付",color: "cyan"
 
 
-    .col.s12.m4.grey.lighten-4
+    .col.s12.m6.grey.lighten-4
       .center
         .card-panel
           %h5 機種変更での
           = render "prefetches/pre",type: "機種変更",color: "orange"
 
+
+
+  .containers.grey.lighten-4
+    %h5 MyShop登録について
+    %p Myshop登録したらここで入力するやで(・∀・)！
+    .col.s12.m4.grey.lighten-5
+      .center
+        .card-panel
+          %h5 新規で
+          = render "shops/form",type: "新規受付",color: "cyan"
+
+
+    .col.s12.m4.grey.lighten-4
+      .center
+        .card-panel
+          %h5 機種変更で
+          = render "shops/form",type: "機種変更",color: "orange"
+
     .col.s12.m4.grey.lighten-3
       .center
         .card-panel
-          %h5 情報変更での
-          = render "prefetches/pre",type: "情報変更", color: "pink"
-
-  .container
+          %h5 情報変更で
+          = render "shops/form",type: "情報変更", color: "pink"
+  .containers
     .col.s12.m6
       .center
         .card-panel

@@ -8,14 +8,25 @@
       %tr
         %td 新規受付
         %td 機種変更
-        %td 情報変更
       
       %tr
         %td= "#{@new_pre}件"
         %td= "#{@che_pre}件"
-        %td= "#{@inf_pre}件"
           
-    
+  .card-panel
+    %h5.pink-text MyShopの登録状況
+
+    %table.bordered
+      %tr
+        %td 新規受付
+        %td 機種変更
+        %td 情報変更
+      %tr
+        %td= "#{@myshop_n}件"
+        %td= "#{@myshop_c}件"
+        %td= "#{@myshop_i}件"
+
+
   .card-panel
     %h5.orange-text SBカードの発行状況について
     %table.bordered
